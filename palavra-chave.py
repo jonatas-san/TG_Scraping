@@ -24,36 +24,74 @@ api = tweepy.API(auth)
 
 
 plchave = form.getvalue("plchave")
+extensao = form.getvalue("extensaoS")
+id = form.getvalue("id")
+truncated = form.getvalue("truncated")
+limitpl = form.getvalue("limitpl")
+
 
 tweets = []
 busca = tweepy.Cursor(api.search, 
           plchave,
           dtinipl = form.getvalue("dtinipl"),
           dtfimpl = form.getvalue("dtfimpl"),
-          ).items(10)
+          lang = form.getvalue("lang")
+          ).items(int(limitpl))
 
 for tweet in busca:
     tweet = tweet._json
     tweets.append(tweet)
 
+
 df = pd.DataFrame(tweets)
+df.drop(["id","truncated"], axis='columns',inplace=True)  
+#df
 
-df.to_csv('ResultKeyWord.csv', sep=';')
+if extensao == 'csv':
+    df.to_csv('resultUser.csv', sep=';')
 
+    print("<html>")
+    print("<head>")
+    print("<meta charset=\"utf-8\">")
+    print("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">")
+    print("</head>")
+    print("<body>")
+    print ("<h2> Pesquisa:</h2>")
+    print("<h1 id=\"baixar\"><a href=\"http://localhost:80/python/projeto/resultUser.csv\"><button>Baixar arquivo</button></a></h1>")
+    print("<br/>")
+    print ("<h2 id=\"voltarhome\"><a href=\"http://localhost/python/projeto/html.html\">Voltar a pagina de pesquisa</a></h2>")
+    print("</body>")
+    print("</html>")
 
-print("<html>")
-print("<head>")
-print("<meta charset=\"utf-8\">")
-print("</head>")
-print("<body>")
-print ("<h2> Pesquisa:</h2>")
-print("<a href=\"http://localhost:80/python/projeto/ResultKeyWord.csv\">Baixar arquivo </a>")
-print("<br/>")
-print ("<h2><a href=\"http://localhost/python/projeto/html.html\">Voltar a pagina de pesquisa</a></h2>")
+elif extensao == 'json':
+    df.to_json('resultUser.json')
+    print("<html>")
+    print("<head>")
+    print("<meta charset=\"utf-8\">")
+    print("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">")
+    print("</head>")
+    print("<body>")
+    print ("<h2> Pesquisa:</h2>")
+    print("<h1 id=\"baixar\"><a href=\"http://localhost:80/python/projeto/resultUser.json\"><button>Baixar arquivo</button></a></h1>")
+    print("<br/>")
+    print ("<h2 id=\"voltarhome\"><a href=\"http://localhost/python/projeto/html.html\">Voltar a pagina de pesquisa</a></h2>")
+    print("</body>")
+    print("</html>")
 
-print("</body>")
-print("</html>")
+elif extensao == 'excel':
+    df.to_excel('resultUser.xlsx')
+    print("<html>")
+    print("<head>")
+    print("<meta charset=\"utf-8\">")
+    print("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">")
+    print("</head>")
+    print("<body>")
+    print ("<h2> Pesquisa:</h2>")
+    print("<h1 id=\"baixar\"><a href=\"http://localhost:80/python/projeto/resultUser.xlsx\"><button>Baixar arquivo</button></a></h1>")
+    print("<br/>")
+    print ("<h2 id=\"voltarhome\"><a href=\"http://localhost/python/projeto/html.html\">Voltar a pagina de pesquisa</a></h2>")
+    print("</body>")
+    print("</html>")
 
-# df.to_json('json_rec.json', orient="records")
-# df.to_json('json_index.json', orient="index")
-# df.to_json('json_columns.json', orient="columns")
+else:
+    print("Nenhuma extensão selecionada")

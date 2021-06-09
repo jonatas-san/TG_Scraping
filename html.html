@@ -18,32 +18,43 @@ function mostrarCardapio (id, id2){
       document.getElementById(id2).style.display = 'none'
     }
   }
-  
+
+
+function escodecheck(id){
+  if (document.getElementById(id).style.display == 'none'){
+      document.getElementById(id).style.display = 'block';
+    }
+   else{
+      document.getElementById(id).style.display = 'none';
+      document.getElementById(id2).style.display = 'none'
+    }
+  }
+
   </script>
 
     <body>
 
-      <div class="menu">
+      <nav class="menu">
           <ul>
               <li><a href="#">Criadores</a></li>
               <li><a href="#">Web Scraping</a>
                   <!--<ul>
-                      <li><a href="#">Criação de Sites</a></li>
-                      <li><a href="#">Arte Visual</a></li>
+                      <li><a href="#">Texto</a></li>
+                      <li><a href="#">TEXTO</a></li>
                   </ul>-->
               </li>
               <li><a href="#">Finalidade</a>
                   <!--<ul>
-                      <li><a href="#">Comidas Fit</a></li>
-                      <li><a href="#">Comidas Vegana</a></li>
-                      <li><a href="#">Comidas Diversas</a></li>
-                      <li><a href="#">Suco Detox</a></li>
-                      <li><a href="#">Sucos Naturais</a></li>
+                      <li><a href="#">TEXTO</a></li>
+                      <li><a href="#">TEXTO</a></li>
+                      <li><a href="#">TEXTO</a></li>
+                      <li><a href="#">TEXTO</a></li>
+                      <li><a href="#">TEXTO</a></li>
                   </ul>-->
               </li>
-              <li><a href="#">Contato</a></li>
+              <!--<li><a href="#">Contato</a></li>-->
           </ul>
-        </div>
+        </nav>
   
     
       <div id="allpag">
@@ -55,12 +66,18 @@ function mostrarCardapio (id, id2){
                <div id="menupesquisa">
                 <input id="plchave" type="text" size="15" name="plchave" placeholder="Pesquisar"></br>
                 <input id="dataini" type="date" name="dtinipl" size="15"></br>
-                <input id="datafim" type="date" name="dtfimpl" size="15"></br>                
-                <select id="extcsv" class="extcsvC" name="extensao">
+                <input id="datafim" type="date" name="dtfimpl" size="15"></br>
+                <input id="limitpl" type="text" size="15" name="limitpl" placeholder="Quantidade de twitter"></br>                
+                <select id="extcsvpl" class="extcsvC" name="extensaoS">
                   <option value="csv">CSV</option>
                   <option value="json">JSON</option>
                   <option value="excel">EXCEL</option>       
-                </select>             
+                </select>
+                <select id="langID" class="langCs" name="lang">
+                  <option value="pt">PT</option>
+                  <option value="en">EN</option>       
+                </select>
+
                 <input id="btpesquisa" name="save" type="submit" value="Pesquisar">
                 </div>
            </form>
@@ -72,13 +89,12 @@ function mostrarCardapio (id, id2){
            <form action="usuario.py" method="POST">
                <div id="menupesquisausr">
                 <input id="usuario" type="text" size="15" name="usuario" placeholder="Usuario" />
+                <input id="limitusr" type="text" size="15" name="limitpl" placeholder="Quantidade de twitter"></br>
                 <select id="extcsv" class="extcsvC" name="extensao">
                   <option value="csv">CSV</option>
                   <option value="json">JSON</option>
                   <option value="excel">EXCEL</option>       
                 </select>
-
-
                 <input id="btpesquisausr" type="submit" value="Pesquisar" />
                </div>
            </form>
@@ -93,7 +109,7 @@ function mostrarCardapio (id, id2){
     body {
     
       background-image: url("https://uploaddeimagens.com.br/images/003/034/323/full/scraping2.gif");
-      background-attachment: fixed;
+      background-attachment: inherit;
       
     }
     .hidden {
@@ -106,7 +122,9 @@ input {
 
 /*Estilizando a nav da classe menu */
 .menu {
-width: 78%;
+position: fixed;
+left: -2px;
+width: 161%;
 height: 45px;
 margin: 30px 0px 0px 0px;
 background-color:#00b2ff;
@@ -126,6 +144,9 @@ float: left;
 }
 
 .menu a {
+position: relative;
+top: -16px;
+left:93px;
 padding: 15px 0px 12px 0px;
 display: block;
 text-decoration: none;
@@ -164,6 +185,28 @@ div#allpag {
     top: 100px;
 }
 
+/* Style de coluna */
+
+div#caixaselecao {
+    position: absolute;
+    top: 423px;
+    left: 299px;
+    background-color:white;
+    border-radius: 5px;
+}
+
+label {
+    margin: 27px;
+    position: relative;
+    top: -9px;
+    font: 1rem 'Fire Sans', sans-serif;
+}
+
+.checkcol {
+    margin: -6px;
+    position: relative;
+    left: 16px;
+}
 
 input.modCar1 {
   position: relative;
@@ -193,8 +236,8 @@ input.modCar2 {
 
 input#btpesquisa {
     position: relative;
-    left: 302px;
-    top: 365px;
+    left: 296px;
+    top: 420px;
     width: 280px;
     height: 40px;
     border-radius: 6px;
@@ -205,8 +248,8 @@ input#btpesquisa {
 
 input#btpesquisausr {
     position: relative;
-    left: 301px;
-    top: 350px;
+    left: 299px;
+    top: 357px;
     width: 280px;
     height: 40px;
     border-radius: 6px;
@@ -235,9 +278,20 @@ input#usuario {
     border-radius: 6px;
 }
 
+select#extcsvpl {
+  position: absolute;
+  top: 329px;
+  left: 299px;
+  width: 282px;
+  height: 33px;
+  border-radius: 4px;
+  outline: none;
+  border-radius: 6px;
+}
+
 select#extcsv {
   position: absolute;
-  top: 328px;
+  top: 369px;
   left: 299px;
   width: 282px;
   height: 33px;
@@ -247,7 +301,36 @@ select#extcsv {
 }
 
 
+input#limitusr {
+    position: absolute;
+    top: 328px;
+    left: 296px;
+    width: 278px;
+    height: 29px;
+    border-radius: 6px;
+    outline: none;
+}
 
+input#limitpl {
+    position: absolute;
+    top: 370px;
+    left: 298px;
+    width: 278px;
+    height: 29px;
+    border-radius: 6px;
+    outline: none;
+}
+
+select#langID {
+    position: absolute;
+    top: 414px;
+    left: 299px;
+    width: 282px;
+    height: 33px;
+    border-radius: 4px;
+    outline: none;
+    border-radius: 6px;
+}
 
     input#dataini {
     position: relative;

@@ -1,0 +1,56 @@
+body {
+    position: fixed;
+    background-image: url("https://uploaddeimagens.com.br/images/003/034/323/full/scraping2.gif");
+    background-attachment: inherit;
+    
+  }
+
+  img {
+    position: fixed;
+    top: 13px;
+    left: 1059px;
+    max-width: 20%;
+  }
+
+ .faixa {
+    position: fixed;
+    left: -2px;
+    width: 161%;
+    height: 106px;
+    margin: -27px 0px 0px 0px;
+    background-color: #000;
+    font-family: Arial;
+}
+
+  button {
+    font-family: Arial;
+    width: 400px;
+    height: 80px;
+    border-radius: 7px;
+    position: absolute;
+    left: 385px;
+    top: 169px;
+    font-size: 44px;
+    color: white;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: #25c1e4;
+}
+
+h2#voltarhome {
+    position: absolute;
+    left: 431px;
+    top: 342px;
+    width: 416px;
+    background-color:#00b2ff;
+    font-family: Arial;
+    border-radius: 7px;
+}
+
+a {
+    color: white;
+    position: absolute;
+    top: 17px;
+    left: 88px;
+}

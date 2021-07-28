@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>TwiScraping</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" conten="width=device-with, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Python</title>
 </head>
@@ -32,398 +36,120 @@ function escodecheck(id){
 
   </script>
 
-    <body>
-
-      <nav class="menu">
-          <ul>
-              <li><a href="#">Criadores</a></li>
-              <li><a href="#">Web Scraping</a>
-                  <!--<ul>
-                      <li><a href="#">Texto</a></li>
-                      <li><a href="#">TEXTO</a></li>
-                  </ul>-->
-              </li>
-              <li><a href="#">Finalidade</a>
-                  <!--<ul>
-                      <li><a href="#">TEXTO</a></li>
-                      <li><a href="#">TEXTO</a></li>
-                      <li><a href="#">TEXTO</a></li>
-                      <li><a href="#">TEXTO</a></li>
-                      <li><a href="#">TEXTO</a></li>
-                  </ul>-->
-              </li>
-              <!--<li><a href="#">Contato</a></li>-->
-          </ul>
-        </nav>
-  
-    
-      <div id="allpag">
-    
-        <input class="modCar1" type="button" value="Scraping por Palavra" onclick="mostrarCardapio('palavraChave', 'pesquisaUser')" />
-    
-        <div id="palavraChave" class="hidden">
-           <form action="palavra-chave.py" method="post">
-               <div id="menupesquisa">
-                <input id="plchave" type="text" size="15" name="plchave" placeholder="Pesquisar"></br>
-                <input id="dataini" type="date" name="dtinipl" size="15"></br>
-                <input id="datafim" type="date" name="dtfimpl" size="15"></br>
-                <input id="limitpl" type="text" size="15" name="limitpl" placeholder="Quantidade de twitter"></br>                
-                <select id="extcsvpl" class="extcsvC" name="extensaoS">
-                  <option value="csv">CSV</option>
-                  <option value="json">JSON</option>
-                  <option value="excel">EXCEL</option>       
-                </select>
-                <select id="langID" class="langCs" name="lang">
-                  <option value="pt">PT</option>
-                  <option value="en">EN</option>       
-                </select>
-
-                <input id="btpesquisa" name="save" type="submit" value="Pesquisar">
-                </div>
-           </form>
-         </div>
-       
-       <input class="modCar2" type="button" value="Scraping por Usuário" onclick="mostrarCardapio('pesquisaUser','palavraChave')" />    
-         
-       <div id="pesquisaUser" class="hidden">
-           <form action="usuario.py" method="POST">
-               <div id="menupesquisausr">
-                <input id="usuario" type="text" size="15" name="usuario" placeholder="Usuario" />
-                <input id="limitusr" type="text" size="15" name="limitpl" placeholder="Quantidade de twitter"></br>
-                <select id="extcsv" class="extcsvC" name="extensao">
-                  <option value="csv">CSV</option>
-                  <option value="json">JSON</option>
-                  <option value="excel">EXCEL</option>       
-                </select>
-                <input id="btpesquisausr" type="submit" value="Pesquisar" />
-               </div>
-           </form>
-         </div>
-
-    </div>
-    </body>
-
-<!-- Estilo da Página -->
-
-<style>
-    body {
-    
-      background-image: url("https://uploaddeimagens.com.br/images/003/034/323/full/scraping2.gif");
-      background-attachment: inherit;
+  <body>
       
-    }
-    .hidden {
-  display: none;
-}
-
-input {
-  display: block; 
-}
-
-/*Estilizando a nav da classe menu */
-.menu {
-position: fixed;
-left: -2px;
-width: 161%;
-height: 45px;
-margin: 30px 0px 0px 0px;
-background-color:#00b2ff;
-font-family: Arial;
-}
-
-/*Estilizando as listas */
-.menu ul {
-list-style: none;
-position: relative;
-left: 289px;
-}
-
-.menu ul li {
-width: 150px;
-float: left;
-}
-
-.menu a {
-position: relative;
-top: -16px;
-left:93px;
-padding: 15px 0px 12px 0px;
-display: block;
-text-decoration: none;
-text-align: center;
-background-color:#00b2ff;
-color: #fff;
-}
-
-.menu ul ul {
-position: absolute;
-visibility: hidden;
-/*visibility: inherit;*/
-}
-
-.menu ul li:hover ul {
-
-visibility: visible;
-}
-
-.menu a:hover {
-background-color:#0f88e0;
-color: #fff;
-}
-
-.menu ul ul li {
-float: none;
-border-bottom: solid 1px #ccc;
-}
-
-.menu ul ul li a {
-background-color: #00b2ff;
-}
-
-div#allpag {
-    position: absolute;
-    top: 100px;
-}
-
-/* Style de coluna */
-
-div#caixaselecao {
-    position: absolute;
-    top: 423px;
-    left: 299px;
-    background-color:white;
-    border-radius: 5px;
-}
-
-label {
-    margin: 27px;
-    position: relative;
-    top: -9px;
-    font: 1rem 'Fire Sans', sans-serif;
-}
-
-.checkcol {
-    margin: -6px;
-    position: relative;
-    left: 16px;
-}
-
-input.modCar1 {
-  position: relative;
-  background-color: #00b2ff;
-  outline: none;
-  top: 76px;
-  width: 350px;
-  height: 116px;
-  border-radius: 15px;
-  border: none;
-  font-size: 30px;
-  left: 176px;
-}
-
-input.modCar2 {
-  position: relative;
-  background-color: #00b2ff;
-  outline: none;
-  top: -42px;
-  width: 350px;
-  height: 116px;
-  border-radius: 15px;
-  border: none;
-  font-size: 30px;
-  left: 712px;
-}
-
-input#btpesquisa {
-    position: relative;
-    left: 296px;
-    top: 420px;
-    width: 280px;
-    height: 40px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    background-color: #25c1e4;
-}
-
-input#btpesquisausr {
-    position: relative;
-    left: 299px;
-    top: 357px;
-    width: 280px;
-    height: 40px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    background-color: #25c1e4;
-}
-    
-input#usuario {
-    position: relative;
-    height: 36px;
-    width: 280px;
-    left: 296px;
-    top: 278px;
-    outline: none;
-    border-radius: 6px;
-    }
-    
-    input#plchave {
-    position: relative;
-    height: 36px;
-    width: 280px;
-    left: 301px;
-    top: 215px;
-    outline: none;
-    border-radius: 6px;
-}
-
-select#extcsvpl {
-  position: absolute;
-  top: 329px;
-  left: 299px;
-  width: 282px;
-  height: 33px;
-  border-radius: 4px;
-  outline: none;
-  border-radius: 6px;
-}
-
-select#extcsv {
-  position: absolute;
-  top: 369px;
-  left: 299px;
-  width: 282px;
-  height: 33px;
-  border-radius: 4px;
-  outline: none;
-  border-radius: 6px;
-}
-
-
-input#limitusr {
-    position: absolute;
-    top: 328px;
-    left: 296px;
-    width: 278px;
-    height: 29px;
-    border-radius: 6px;
-    outline: none;
-}
-
-input#limitpl {
-    position: absolute;
-    top: 370px;
-    left: 298px;
-    width: 278px;
-    height: 29px;
-    border-radius: 6px;
-    outline: none;
-}
-
-select#langID {
-    position: absolute;
-    top: 414px;
-    left: 299px;
-    width: 282px;
-    height: 33px;
-    border-radius: 4px;
-    outline: none;
-    border-radius: 6px;
-}
-
-    input#dataini {
-    position: relative;
-    height: 36px;
-    width: 130px;
-    margin: -80px;
-    left: 380px;
-    top: 284px;
-    outline: none;
-    border-radius: 6px;
-    }
+      <nav class="container">
+        <nav class="menu">
+            <ul>
+                <li><a href="#" onclick="document.getElementById('id01').style.display='block'"><b>Criadores</b></a></li>
+                <li><a href="https://blog.dsacademy.com.br/web-scraping-e-web-crawling-sao-legais-ou-ilegais/"><b>Web Scraping</b></a></li>
+                <li><a href="#" onclick="document.getElementById('id03').style.display='block'"><b>Finalidade</b></a></li>
+            </ul>
+          </nav>
         
-    input#datafim {
-    position: relative;
-    height: 36px;
-    width: 130px;
-    left: 443px;
-    top: 307px;
-    outline: none;
-    border-radius: 6px;
-}
-    
-div#pesquisaUser {
-    position: absolute;
-    top: 14px;
-    left: 186px;
-}
-    
-div#menupesquisa {
-    position: absolute;
-    left: 186px;
-    top: 50px;
-}
+        <img src="img/branco.png" alt="Logo">
+        <div id="allpag">
+      
+          <input class="modCar1" type="button" value="Scraping por Palavra" onclick="mostrarCardapio('palavraChave', 'pesquisaUser')" />
+      
+          <div id="palavraChave" class="hidden">
+            <form action="palavra-chave.py" method="post">
+                <div id="menupesquisa">
+                  <input id="plchave" type="text" size="15" name="plchave" placeholder="Pesquisar"></br>
+                  <input id="dataini" type="date" name="dtinipl" size="15"></br>
+                  <input id="datafim" type="date" name="dtfimpl" size="15"></br>
+                  <input id="limitpl" type="text" size="15" name="limitpl" placeholder="Quantidade de tweets"></br>                
+                  <select id="extcsvpl" class="extcsvC" name="extensaoS">
+                    <option value="csv">CSV</option>
+                    <option value="json">JSON</option>
+                    <option value="excel">EXCEL</option>       
+                  </select>
+                  <select id="langID" class="langCs" name="lang">
+                    <option value="pt">PT</option>
+                    <option value="en">EN</option>       
+                  </select>
 
-/*
-input#extjson {
-    position: absolute;
-    top: 338px;
-    left: 445px;
-}
+                  <input id="btpesquisa" name="save" type="submit" value="Pesquisar">
+                  </div>
+            </form>
+          </div>
+        
+        <input class="modCar2" type="button" value="Scraping por Usuário" onclick="mostrarCardapio('pesquisaUser','palavraChave')" />    
+          
+        <div id="pesquisaUser" class="hidden">
+            <form action="usuario.py" method="POST">
+                <div id="menupesquisausr">
+                  <input id="usuario" type="text" size="15" name="usuario" placeholder="Usuario" />
+                  <input id="limitusr" type="text" size="15" name="limitpl" placeholder="Quantidade de tweets"></br>
+                  <select id="extcsv" class="extcsvC" name="extensao">
+                    <option value="csv">CSV</option>
+                    <option value="json">JSON</option>
+                    <option value="excel">EXCEL</option>       
+                  </select>
+                  <input id="btpesquisausr" type="submit" value="Pesquisar" />
+                </div>
+            </form>
+          </div>
 
-label#extjsonlab {
-    position: absolute;
-    top: 332px;
-    left: 466px;
-    color: white;
-    font-size: 24px;
-}
+          <div class="w3-container">
+            <div id="id01" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                  <figure>
+                  <img id="jonatas" src="img/jonatasMe.jpeg" alt="Jonatas">
+                  </figure>
+                  <p id="jonatastext"><b style="font-size: 18px;">Jonatas Dos Santos</b><br>
+                  Aluno de graduação do curso de<br>
+                  Análise e Desenvolvimento de Sistemas,<br>
+                  da Faculdade de Tecnologia de Carapicuíba<br>
+                  nesse trabalho atuei com o desenvolvimento<br>
+                  e atualmente trabalho como <br>
+                  Analista de Informações Gerenciais Jr<BR>
+                  na Bradesco.
+                </p>
 
+                <figure>
+                  <img id="caique" src="img/caique.jpeg" alt="Caique">
+                  </figure>
+                  <p id="caiquetext"><b style="font-size: 18px;">Caique Morais</b><br>
+                  Aluno de graduação do curso de<br>
+                  Análise e Desenvolvimento de Sistemas,<br>
+                  da Faculdade de Tecnologia de Carapicuíba<br>
+                  nesse trabalho atuei com o desenvolvimento<br>
+                  e auxilio na documentação,<br>
+                  atualmente trabalho como Analista de Crédito Jr<br>
+                  no Bradesco SA.
+                </p>
+                
+                <figure>
+                  <img id="renan" src="img/renan.jpeg" alt="Renan">
+                  </figure>
+                  <p id="renantext"><b style="font-size: 18px;">Renan Antoneli</b><br>
+                  Aluno de graduação do curso de<br>
+                  Análise e Desenvolvimento de Sistemas,<br>
+                  da Faculdade de Tecnologia de Carapicuíba<br>
+                  nesse trabalho atuei com a documentação<br>
+                  e auxilio no desenvolvimento,<br>
+                  atualmente trabalho como <br>Business Intelligence Analyst<br>
+                  na Makrosystems.
+                </p>
 
-input#extcsv {
-    position: absolute;
-    top: 338px;
-    left: 365px;
-}
+                </div>
+              </div>
+            </div>
+          </div>
 
-label#extcsvlab {
-    position: absolute;
-    top: 332px;
-    left: 387px;
-    color: white;
-    font-size: 24px;
-}
-
-input#extjsonpl {
-    position: absolute;
-    top: 325px;
-    left: 445px;
-}
-
-label#extjsonlabpl {
-    position: absolute;
-    top: 318px;
-    left: 467px;
-    color: white;
-    font-size: 24px;
-}
-
-
-input#extcsvpl {
-    position: absolute;
-    top: 324px;
-    left: 365px;
-}
-
-label#extcsvlabpl {
-    position: absolute;
-    top: 318px;
-    left: 387px;
-    color: white;
-    font-size: 24px;
-}
-*/
-    
-    </style>
+          <div class="wcontainer" id="id03">
+            <span onclick="document.getElementById('id03').style.display='none'" class="wbutton" style="color: white;">&times;</span>
+            <p id="finaletext"><b style="font-size: 18px;">Finalidade</b><br><br>
+            O TwiScraping tem como finalidade tazer de forma facil e rápida
+            um web scraping no twitter sobre uma palavra, frase ou usuário,
+            para facilitar nas buscas de opiniões e análise de cenário. Trazendo
+            uma facilidade na hora de extrair as consultas, com a opção de trabalhar
+            com 3 tipos de arquivos, períodos e quantidade de twitters.
+            </p>
+          </div>
+    </nav>
+  </body>
 </html>

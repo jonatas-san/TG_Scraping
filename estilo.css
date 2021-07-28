@@ -1,0 +1,554 @@
+body {
+    position: fixed;
+    background-image: url("https://uploaddeimagens.com.br/images/003/034/323/full/scraping2.gif");
+    background-attachment: inherit;
+    
+  }
+  .hidden {
+display: none;
+}
+
+input {
+display: block; 
+}
+
+.w3-display-topright {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white !important;
+}
+
+/* Informação dos Desenvolvedores */
+img {
+  position: fixed;
+  top: 13px;
+  left: 1059px;
+  max-width: 20%;
+}
+
+img#jonatas {
+  position: relative;
+  left: 7px;
+  border-radius: 64%;
+}
+
+p#jonatastext {
+  position: relative;
+  color:white;
+  left: -310px;
+  top: 4px;
+  font-size: 11px;
+  text-align: center;
+}
+
+#caiquetext {
+  position: relative;
+  color:white;
+  top: -298px;
+  left: -4px;
+  font-size: 11px;
+  text-align: center;
+}
+
+img#caique {
+  position: relative;
+  left: 312px;
+  top: -290px;
+  border-radius: 64%;
+}
+
+#renantext {
+  position: relative;
+  color: white;
+  top: -602px;
+  left: 303px;
+  font-size: 11px;
+  text-align: center;
+}
+img#renan {
+  position: relative;
+  left: 619px;
+  top: -591px;
+  border-radius: 64%;
+}
+
+.w3-container, .w3-panel {
+  padding: 0.01em 16px;
+  height: 343px;
+}
+.w3-modal {
+  left: -154px !important;  
+  width: 114% !important;
+  top: 9px !important;
+}
+
+/*Estilizando a nav da classe menu */
+.menu {
+position: fixed;
+left: -2px;
+width: 161%;
+height:106px;
+margin: -8px 0px 0px 0px;
+background-color:#000 ;
+font-family: Arial;
+}
+
+/*Estilizando as listas */
+.menu ul {
+list-style: none;
+position: relative;
+left: 289px;
+}
+
+.menu ul li {
+width: 243px;
+float: left;
+}
+
+.menu a {
+  position: relative;
+  top: -16px;
+  left: -84px;
+  padding: 32px 0px 34px 0px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 23px;
+  background-color:#000;
+  color: #fff;
+}
+
+.menu ul ul {
+position: absolute;
+visibility: hidden;
+/*visibility: inherit;*/
+}
+
+.menu ul li:hover ul {
+
+visibility: visible;
+}
+
+.menu a:hover {
+color: #00b2ff;
+}
+
+.menu ul ul li {
+float: none;
+border-bottom: solid 1px #00b2ff;
+}
+
+.menu ul ul li a {
+background-color:#00b2ff;
+}
+
+div#allpag {
+  position: absolute;
+  top: 100px;
+}
+
+/* Style de coluna */
+
+div#caixaselecao {
+  position: absolute;
+  top: 423px;
+  left: 299px;
+  background-color:white;
+  border-radius: 5px;
+}
+
+label {
+  margin: 27px;
+  position: relative;
+  top: -9px;
+  font: 1rem 'Fire Sans', sans-serif;
+}
+
+.checkcol {
+  margin: -6px;
+  position: relative;
+  left: 16px;
+}
+
+input.modCar1 {
+position: relative;
+background-color: #00b2ff;
+outline: none;
+top: 76px;
+cursor: pointer;
+width: 350px;
+height: 116px;
+border-radius: 15px;
+border: none;
+font-size: 30px;
+left: 176px;
+}
+
+input.modCar2 {
+position: relative;
+background-color: #00b2ff;
+outline: none;
+top: -42px;
+cursor: pointer;
+width: 350px;
+height: 116px;
+border-radius: 15px;
+border: none;
+font-size: 30px;
+left: 712px;
+}
+
+input#btpesquisa {
+  position: relative;
+  left: 299px;
+  top: 408px;
+  width: 270px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #25c1e4;
+}
+
+div#menupesquisausr {
+  position: absolute;
+  top: -28px;
+}
+
+input#btpesquisausr {
+  position: relative;
+  left: 291px;
+  top: 343px;
+  width: 274px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #25c1e4;
+}
+  
+input#usuario {
+  position: relative;
+  height: 30px;
+  width: 273px;
+  left: 291px;
+  top: 278px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  }
+  
+  input#plchave {
+  position: relative;
+  height: 30px;
+  width: 268px;
+  left: 299px;
+  top: 223px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+select#extcsvpl {
+position: absolute;
+top: 297px;
+left: 299px;
+width: 270px;
+height: 30px;
+border: none;
+outline: none;
+border-radius: 6px;
+}
+
+select#extcsv {
+position: absolute;
+top: 354px;
+left: 291px;
+width: 274px;
+height: 32px;
+border: none;
+outline: none;
+border-radius: 6px;
+}
+
+
+input#limitusr {
+  position: absolute;
+  top: 316px;
+  left: 291px;
+  width: 273px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+input#limitpl {
+  position: absolute;
+  top: 334px;
+  left: 299px;
+  width: 272px;
+  height: 30px;
+  border:none;
+  border-radius: 6px;
+  outline: none;
+}
+
+select#langID {
+  position: absolute;
+  top: 373px;
+  left: 299px;
+  width: 270px;
+  height: 32px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+input#dataini {
+position: relative;
+font-size: 12px;
+height: 30px;
+width: 130px;
+margin: -80px;
+left: 379px;
+top: 288px;
+border: none;
+outline: none;
+border-radius: 6px;
+}
+      
+  input#datafim {
+  position: relative;
+  font-size: 12px;
+  height: 30px;
+  width: 131px;
+  left: 437px;
+  top: 316px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+  
+div#pesquisaUser {
+  position: absolute;
+  top: 14px;
+  left: 186px;
+}
+  
+div#menupesquisa {
+  position: absolute;
+  left: 186px;
+  top: 40px;
+}
+
+.w3-modal-content {
+  background-color: #000000db !important;
+}
+
+.wcontainer {
+  background-color: #000000db;
+  width: 924px;
+  position: fixed;
+  left: 168px;
+  top: 116px;
+  height: 241px;
+}
+
+p#finaletext {
+  color: white;
+  text-align: center;
+}
+
+span.wbutton {
+  position: relative;
+  left: 873px;
+}
+
+.wbutton {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  body {
+    position: relative;
+  }
+  .wcontainer {
+    background-color: #000000db;
+    width: auto;
+    position: fixed;
+    left: auto;
+    top: 116px;
+    height: 313px;
+  }
+  .w3-container, .w3-panel {
+    padding: 0.01em 16px;
+    height: 724px;
+    position: inherit;
+    top: -50px;
+  }
+  .w3-display-topright {
+  position: absolute;
+  right: 0;
+  color: white !important;
+  top: 34px !important;
+  }
+
+
+  .w3-modal-content {
+    margin: 0 10px;
+    width: auto!important;
+    height: auto !important;
+  }
+
+  .w3-container, .w3-panel {
+    padding: 0.01em 40px;
+  }
+
+    .menu a {
+      position: relative;
+      top: -7px;
+      left: -53px;
+      padding: 59px 0px 22px 0px;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      background-color: #000;
+      color: #fff;
+  }
+
+  .menu {
+    position: fixed;
+    left: -297px;
+    width: 161%;
+    height: 106px;
+    margin: -8px 0px 0px 0px;
+    background-color: #000;
+    font-family: Arial;
+  }
+
+
+  .menu ul li {
+    width: 139px;
+    float: left;
+  }
+
+  span.wbutton {
+    position: relative;
+    left: 334px;
+  }
+
+  img {
+    position: fixed;
+    top: 3px;
+    left: 97px;
+    max-width: 49%;
+  }
+
+  input.modCar1 {
+    position: relative;
+    background-color: #00b2ff;
+    outline: none;
+    top: 76px;
+    cursor: pointer;
+    width: 350px;
+    height: 116px;
+    border-radius: 15px;
+    border: none;
+    font-size: 30px;
+    left: 12px;
+  }
+
+  input.modCar2 {
+      position: relative;
+      background-color: #00b2ff;
+      outline: none;
+      top: 91px;
+      cursor: pointer;
+      width: 350px;
+      height: 116px;
+      border-radius: 15px;
+      border: none;
+      font-size: 30px;
+      left: 12px;
+  }
+
+  div#menupesquisa {
+    position: absolute;
+    left: -250px;
+    top: 135px;
+  }
+
+  div#menupesquisausr {
+    left: -431px;
+    position: absolute;
+    top: 65px;
+  }
+
+  .w3-modal {
+    left: 7px !important;
+    width: 96% !important;
+    top: 9px !important;
+  }
+  img#caique {
+    position: relative;
+    left: 51px;
+    top: 32px;
+    border-radius: 64%;
+  }
+
+  #caiquetext {
+    position: relative;
+    color: white;
+    top: 13px;
+    left: -1px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  img#renan {
+    position: relative;
+    left: 46px;
+    top: 6px;
+    border-radius: 64%;
+  }
+
+  #renantext {
+    position: relative;
+    color: white;
+    top: -12px;
+    left: -2px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  p#jonatastext {
+    position: relative;
+    color: white;
+    left: 8px;
+    top: 36px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  img#jonatas {
+    top: 46px;
+    position: relative;
+    left: 52px;
+    border-radius: 64%;
+  }
+
+}
